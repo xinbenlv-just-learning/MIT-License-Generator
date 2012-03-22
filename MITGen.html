@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>MIT License Generator</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Zainan Victor Zhou" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.0.1/bootstrap.min.js"></script>
+		<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+		<script type="text/javascript">
+			function updateLicense() {
+				var author=document.forms["myForm"]["fname"].value;
+				var year=document.forms["myForm"]["fyear"].value;
+				if (author==""||author==null)author="&lt;copyright holders&gt";
+				if (year==""||year==null)year="&lt;year&gt";
+				
+				document.getElementById("copyrightline").innerHTML = "Copyright (C) " + year + " " + author ;
+				return false;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>MIT License Generator</h1>
+			</header>
+			
+			<div class="container">
+				<div>
+					<form name="myForm" action="" onsubmit="return updateLicense()" method="post">
+						Author: <input type="text" name="fname">
+						Year: <input type="text" name="fyear">
+						<input type="submit" value="Update">
+					</form>
+				</div>
+				<div class= "hero-unit span10" id="license">
+					<p id = "copyrightline">
+						Copyright (C) &lt;year&gt; &lt;copyright holders&gt;
+					</p>
+					<p>
+						Permission is hereby granted, free of charge, to any person obtaining a copy of this
+						software and associated documentation files (the "Software"), to deal in the Software
+						without restriction, including without limitation the rights to use, copy, modify,
+						merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+						permit persons to whom the Software is furnished to do so, subject to the following
+						conditions:
+					</p>
+					<p>
+						The above copyright notice and this permission notice shall be included in all copies
+						or substantial portions of the Software.
+					</p>
+					<p>
+						THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+						INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+						PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+						HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+						OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+						SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+					</p>
+				</div>
+			</div>
+			<footer>
+				<p class="footer">
+					MIT License Generator: &copy; Copyright by <a href="http://www.zzn.im">Zainan Victor Zhou</a>, distributed with <a href="#">MIT license</a>
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>

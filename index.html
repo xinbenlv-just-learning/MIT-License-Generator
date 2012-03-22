@@ -1,88 +1,76 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset='utf-8'>
-
-  <title>xinbenlv/MIT-License-Generator @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #803a57;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-    h1 { font-size: 3.8em; color: #7fc5a8; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #7fc5a8; }
-    h3 { text-align: center; color: #7fc5a8; }
-    a { color: #7fc5a8; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-  </style>
-</head>
-
-<body>
-  <a href="https://github.com/xinbenlv/MIT-License-Generator"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="https://github.com/xinbenlv/MIT-License-Generator/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/xinbenlv/MIT-License-Generator/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="https://github.com/xinbenlv/MIT-License-Generator">MIT-License-Generator</a>
-      <span class="small">by <a href="https://github.com/xinbenlv">xinbenlv</a></span></h1>
-
-    <div class="description">
-      This is just a tiny HTML/CSS/Javascript Project demonstrating how to manipulate text elements on an HTML document without any interaction with server. The code is solely written in one single HTML document.  
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-      <h2>Authors</h2>
-      <p>Zainan Victor Zhou (zzn@jhu.edu)<br/>      </p>
-    
-
-    
-      <h2>Contact</h2>
-      <p>Zainan Victor Zhou (xinbenlv@gmail.com)<br/>      </p>
-    
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/xinbenlv/MIT-License-Generator/zipball/master">zip</a> or
-      <a href="https://github.com/xinbenlv/MIT-License-Generator/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/xinbenlv/MIT-License-Generator</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/xinbenlv/MIT-License-Generator">xinbenlv/MIT-License-Generator</a>
-    </div>
-
-  </div>
-
-</body>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>MIT License Generator</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Zainan Victor Zhou" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.0.1/bootstrap.min.js"></script>
+		<link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+		<script type="text/javascript">
+			function updateLicense() {
+				var author=document.forms["myForm"]["fname"].value;
+				var year=document.forms["myForm"]["fyear"].value;
+				if (author==""||author==null)author="&lt;copyright holders&gt";
+				if (year==""||year==null)year="&lt;year&gt";
+				
+				document.getElementById("copyrightline").innerHTML = "Copyright (C) " + year + " " + author ;
+				return false;
+			}
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<h1>MIT License Generator</h1>
+			</header>
+			
+			<div class="container">
+				<div>
+					<form name="myForm" action="" onsubmit="return updateLicense()" method="post">
+						Author: <input type="text" name="fname">
+						Year: <input type="text" name="fyear">
+						<input type="submit" value="Update">
+					</form>
+				</div>
+				<div class= "hero-unit span10" id="license">
+					<p id = "copyrightline">
+						Copyright (C) &lt;year&gt; &lt;copyright holders&gt;
+					</p>
+					<p>
+						Permission is hereby granted, free of charge, to any person obtaining a copy of this
+						software and associated documentation files (the "Software"), to deal in the Software
+						without restriction, including without limitation the rights to use, copy, modify,
+						merge, publish, distribute, sublicense, and/or sell copies of the Software, and to
+						permit persons to whom the Software is furnished to do so, subject to the following
+						conditions:
+					</p>
+					<p>
+						The above copyright notice and this permission notice shall be included in all copies
+						or substantial portions of the Software.
+					</p>
+					<p>
+						THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+						INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+						PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+						HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+						OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+						SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+					</p>
+				</div>
+			</div>
+			<footer>
+				<p class="footer">
+					MIT License Generator: &copy; Copyright by <a href="http://www.zzn.im">Zainan Victor Zhou</a>, distributed with <a href="#">MIT license</a>
+				</p>
+			</footer>
+		</div>
+	</body>
 </html>
